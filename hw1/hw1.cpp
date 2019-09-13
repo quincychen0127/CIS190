@@ -62,11 +62,14 @@ int main()
 	if (i == 0) 
 	{
 		complex c;
+		complex sum {0,0};
 		while ( cin >> c) 
 		{
+			sum += c;
 			complex y {1.00,1.00};	
 			cout << c + y << endl;
 		}
+		cout << sum << endl;
 	}
 	else 
 	{
