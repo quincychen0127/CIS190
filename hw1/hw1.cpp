@@ -30,10 +30,10 @@ istream & operator >> (istream & is, complex & c)
 {
 	string s1, s2, s3;
 	is >> s1 >> c.real >> s2 >> c.imag >>s3;
-	cout << c.real << " " << c.imag << endl;
 	
 	if (s1 != "{r:" || s2 != "i:" || s3 != "}") 
 		is.setstate(ios_base::failbit);
+	
 	return is;
 }
 
