@@ -57,22 +57,33 @@ int main()
 		if (i == 0 || i == 1)
 			break;
 	if (i == 0) 
+	{
 		complex c;
 		while ( cin >> c) 
+		{
 			complex y {1.00,1.00};	
 			cout << c + y << endl;
+		}
+	}
 	else 
+	{
 		string filename;
 	        cin >> filename;
 		ifstream ifs {filename};
 		
 		if (!ifs)
+		{
 			return 0;
+		}
 		else  
+		{
 			complex d;
 			while ( ifs >> d)
+			{
 				complex y {1.00,1.00};
 				cout << d + y << endl;
-	
+			}
+		}
+	}
 	return 0;	
 }
