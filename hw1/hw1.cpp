@@ -21,7 +21,7 @@ public:
 
 ostream & operator<<(ostream & os, const complex & c)
 {
-	os << "{r: " << c.real << "i: " << c.imag<<"}";
+	os << "{r: " << c.real << "i: " << c.imag << "}";
 	
 	return os;
 }
@@ -29,24 +29,12 @@ ostream & operator<<(ostream & os, const complex & c)
 istream & operator >> (istream & is, complex & c)
 {
 	string s1, s2, s3;
-	is >> s1;
-	if ( s1 != "{r:" ) 
+	is >> s1 >> c.real >> s2 >> c.imag >> s3;
+	if ( s1 != "{r:" || s2 != "i:" || s3 != "}" ) 
 	{
 		is.setstate(ios_base::failbit);
 	}
-	is >> c.real;
-	is >> s2;
-	if ( s2 != "i:" )
-	{
-		is.setstate(ios_base::failbit);
-	}
-	is >> c.imag;
-	is >> s3;
-	if ( s3 != "}" )
-	{
-		is.setstate(ios_base::failbit);
-	}
-
+	
 	return is;
 }
 
@@ -67,7 +55,6 @@ complex operator + (const complex & c1, const complex & c2)
 
 int main()
 {
-	cout << "Enter 0 to read from stdin or 1 to read from 1 file"<<endl;
 	int i;
 	while (cin >> i) 
 		if (i == 0 || i == 1)
@@ -77,20 +64,18 @@ int main()
 		complex c;
 		complex sum {0,0};
 		complex y {1.00,1.00};
-		while ( cin >> c) 
+		while ( cin >> c ) 
 		{
 			sum += c;	
 			cout << c + y << endl;
 		}
 		cout << sum << endl;
-		return 0;
 	}
 	else 
 	{
 		string filename;
 	        cin >> filename;
 		ifstream ifs {filename};
-		complex sum {0,0};
 		
 		if (!ifs)
 		{
@@ -99,9 +84,10 @@ int main()
 		else  
 		{
 			complex d;
-			while ( ifs >> d)
+			complex sum {0,0};
+			complex y {1.00,1.00};
+			while ( ifs >> d )
 			{
-				complex y {1.00,1.00};
 				sum += d;
 				cout << d + y << endl;
 			}
