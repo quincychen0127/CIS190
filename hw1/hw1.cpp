@@ -28,7 +28,7 @@ ostream & operator<<(ostream & os, const complex & c)
 
 istream & operator >> (istream & is, complex & c)
 {
-	string s1, s2, s3
+	string s1, s2, s3;
 	is >> s1;
 	if ( s1 != "{r:" ) 
 	{
