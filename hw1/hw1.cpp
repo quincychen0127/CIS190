@@ -21,7 +21,7 @@ public:
 
 ostream & operator<<(ostream & os, const complex & c)
 {
-	os << "{r:" << c.real << "i:" << c.imag<<"}";
+	os << "{r: " << c.real << "i: " << c.imag<<"}";
 	
 	return os;
 }
@@ -32,7 +32,7 @@ istream & operator >> (istream & is, complex & c)
 	is >> s1 >> c.real >> s2 >> c.imag >>s3;
 	cout << c.real << " " << c.imag << endl;
 	
-	if (s1 != "{r: " || s2 != "i: " || s3 != "}") 
+	if (s1 != "{r:" || s2 != "i:" || s3 != "}") 
 		is.setstate(ios_base::failbit);
 	return is;
 }
