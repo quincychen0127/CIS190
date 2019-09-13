@@ -15,7 +15,7 @@ public:
 	friend ostream & operator<<(ostream &, const complex &);
 	friend istream & operator>>(istream &, complex &);
 	friend complex & operator+=(complex &, const complex &);
-	friend complex & operator+(const complex &, const complex &);
+	friend complex operator+(const complex &, const complex &);
 };
 
 
@@ -43,9 +43,11 @@ complex & operator += (complex & c1, const complex & c2)
 	return c1;
 }
 	
-complex & operator + (const complex & c1, const complex & c2)
+complex operator + (const complex & c1, const complex & c2)
 {
-	complex & c3 {c1.real + c2.real, c1.imag + c2.imag};
+	complex c3;
+	c3.real = c1.real + c2.real;
+	c3.imag = c2.real + c2.imag;
 	return c3;
 }
 
