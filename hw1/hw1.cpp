@@ -31,7 +31,7 @@ istream & operator >> (istream & is, complex & c)
 	string s1, s2, s3;
 	is >> s1 >> c.real >> s2 >> c.imag >>s3;
 	
-	if (s1 != "{r:" || s2 != "i:" || s3 != "}") {
+	if (s1 != "{r:" || s2 != "i:" || s3 != "}") 
 		is.setstate(ios_base::failbit);
 	return is;
 }
@@ -47,7 +47,7 @@ complex & operator + (const complex & c1, const complex & c2)
 {
 	complex & c3;
 	c3.real = c1.real + c2.real;
-	c3.imag  = c1.imag + c2.imag;
+	c3.imag = c1.imag + c2.imag;
 	return c3;
 }
 
