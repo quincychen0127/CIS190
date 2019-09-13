@@ -45,9 +45,7 @@ complex & operator += (complex & c1, const complex & c2)
 	
 complex & operator + (const complex & c1, const complex & c2)
 {
-	complex & c3;
-	c3.real = c1.real + c2.real;
-	c3.imag = c1.imag + c2.imag;
+	complex & c3 {c1.real + c2.real, c1.imag + c2.imag};
 	return c3;
 }
 
@@ -59,20 +57,22 @@ int main()
 		if (i == 0 || i == 1)
 			break;
 	if (i == 0) 
-		while ( complex c; cin >> c) 
+		complex c;
+		while ( cin >> c) 
 			complex y {1.00,1.00};	
 			cout << c + y << endl;
 	else 
 		string filename;
 	        cin >> filename;
-		ifsteam ifs {filename};
+		ifstream ifs {filename};
 		
 		if (!ifs)
 			return 0;
 		else  
-			while (complex c; ifs >> c)
+			complex d;
+			while ( ifs >> d)
 				complex y {1.00,1.00};
-				cout << c + y << endl;
+				cout << d + y << endl;
 	
 	return 0;	
 }
