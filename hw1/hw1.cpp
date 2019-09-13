@@ -31,7 +31,7 @@ istream & operator >> (istream & is, complex & c)
 	string s1, s2, s3;
 	is >> s1 >> c.real >> s2 >> c.imag >>s3;
 	
-	if (s1 != "{r:" || s2 != "i:" || s3 != "}") 
+	if (s1 != "{r: " || s2 != "i: " || s3 != "}") 
 		is.setstate(ios_base::failbit);
 	return is;
 }
@@ -64,6 +64,7 @@ int main()
 		while ( cin >> c) 
 		{
 			complex y {1.00,1.00};	
+			cout << c << endl;
 			cout << c + y << endl;
 		}
 	}
