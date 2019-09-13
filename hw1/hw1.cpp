@@ -90,6 +90,7 @@ int main()
 		string filename;
 	        cin >> filename;
 		ifstream ifs {filename};
+		complex sum {0,0};
 		
 		if (!ifs)
 		{
@@ -101,8 +102,10 @@ int main()
 			while ( ifs >> d)
 			{
 				complex y {1.00,1.00};
+				sum += d;
 				cout << d + y << endl;
 			}
+			cout << sum << endl;
 		}
 	}
 	return 0;	
