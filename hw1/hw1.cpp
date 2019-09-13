@@ -55,10 +55,9 @@ int main()
 {
 	cout << "Enter 0 to read from stdin or 1 to read from 1 file"<<endl;
 	int i;
-	while (cin >> i) {
-		if (i == 0 || i==1)
+	while (cin >> i) 
+		if (i == 0 || i == 1)
 			break;
-	}
 	if (i == 0) 
 		while ( complex c; cin >> c) 
 			complex y {1.00,1.00};	
@@ -71,7 +70,7 @@ int main()
 		if (!ifs)
 			return 0;
 		else  
-			while ( complex c; ifs >> c)
+			while (complex c; ifs >> c)
 				complex y {1.00,1.00};
 				cout << c + y << endl;
 	
